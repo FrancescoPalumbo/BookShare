@@ -4,3 +4,26 @@ BookShare was born in order to fill some gaps in the world of research and shari
  - Sharing your searches:share, with your friends, your research in order to receive advice on the desired product.
 
 Check the slideshow used for the presentation:
+# Installation
+Tested on Ubuntu 18.04
+
+**Clone the repository and create the virtual environment for Python:**
+```
+$ git clone https://github.com/FrancescoPalumbo/BookShare.git
+$ cd BookShare
+$ python3 -m venv venv
+```
+**Activate the environment:**
+```
+$ . venv/bin/activate
+```
+**Install the required dependecy:**
+```
+$ pip install -r requirements.txt
+
+```
+**Run the Server:**
+```
+$ cd flaskr
+$ flask run
+```
