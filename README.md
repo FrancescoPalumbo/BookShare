@@ -3,7 +3,7 @@ BookShare was born in order to fill some gaps in the world of research and shari
  - Searching your books: stay up to date on the latest releases of new books. Search and save everything you're interested in;
  - Sharing your searches: share, with your friends, your research in order to receive advice on the desired product.
 
-Project presentation of BookShare: 
+Project presentation of BookShare: https://docs.google.com/presentation/d/1z_D6_MTjunrJEGtrH6UkHRWRE4WD22TIhGkxoJ9H3Q8/edit?usp=sharing
 # Installation
 Tested on Ubuntu 18.04
 
