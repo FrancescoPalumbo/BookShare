@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+
+  <!--- basic page needs
+  ================================================== -->
+  <meta charset="utf-8">
+	<title>BookShare</title>
+	<meta name="description" content="BookShare">  
+	<meta name="author" content="Esposito-Palumbo">
+
+  <!-- mobile specific metas 
+  ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+ 	<!-- CSS
+  ================================================== -->
+  <link rel="stylesheet" href="../static/css/base.css">  
+  <link rel="stylesheet" href="../static/css/main.css">
+  <link rel="stylesheet" href="../static/css/vendor.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+
+  <!-- script
+  ================================================== -->
+	<script src="../static/js/modernizr.js"></script>
+
+  <!-- favicons
+	================================================== -->
+	<link rel="icon" type="image/png" href="../static/images/icon.png">
+
+</head>
+
+<body id="top">
+
+	<!-- header 
+   ================================================== -->
+   <header>
+
+   	<div class="row">
+   		<div class="logo">
+	       <a  href="{{ url_for('index')}}"><img src="../static/images/Logo.png" title="BookShare" /></a>
+      </div>
+	   	
+      <nav id="main-nav-wrap">
+				<ul class="main-navigation">
+					<li class="current"><a class="smoothscroll"  href="#intro" title="Home">Home</a></li>
+					<li><a class="smoothscroll"  href="#features" title="Features">Features</a></li>
+					<li><a class="smoothscroll"  href="#testimonials" title="Testimonials">Testimonials</a></li>					
+					<li class="highlight with-sep"><a href="#" title="Sign Up" onclick="document.getElementById('sign_up').style.display='block'" style="width:auto;">Sign Up</a></li> 
+				</ul>
+			</nav>
+      <a class="menu-toggle" href="#"><span>Menu</span></a>
+   	</div>   	
+   	
+   </header> <!-- /header -->
+
+	<!-- intro section
+   ================================================== -->
+   <section id="intro">
+   	<div class="shadow-overlay"></div>
+   	<div class="intro-content">
+   		<div class="row">
+   			<div class="col-twelve">
+	   			<h5>Hello, welcome to BookShare.</h5>
+	   			<h1>A room without books is like a body without a soul.</h1>
+          <a class="button stroke smoothscroll" href="#process" title="Login"onclick="document.getElementById('login_page').style.display='block'" style="width:auto;">Login</a>
+	   		</div>  
+   		</div>   		 		
+   	</div> 
+
+    <div id="sign_up" class="modal" style="z-index: 999;">
+      <span onclick="document.getElementById('sign_up').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <form class="modal-content" method="POST" action="{{ url_for('register')}}">
+        <div class="container">
+          <center><h1>Sign Up</h1>
+          <p>Please fill in this form to create an account.</p></center>
+          <hr>
+          <input type="text" placeholder="First Name" name="name">
+          <input type="text" placeholder="Last Name" name="l_name" >
+          <select name="kind">
+            <option value="" disabled selected hidden>Your kind of books:</option>
+            <option value="Fantasy">Fantasy</option>
+            <option value="Horror">Horror</option>
+            <option value="Medicine">Medicine</option>
+            <option value="Music">Music</option>
+            <option value="Romance">Romance</option>
+            <option value="Science">Science</option>
+            <option value="Technology">Technology</option>
+          </select>
+       
+          <input type="text" placeholder="Enter Email" name="email">       
+          <input type="password" placeholder="Enter Password" name="psw">      
+          <input type="password" placeholder="Repeat Password" name="psw-repeat">
+          
+          <center><p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Conditions</a>.</p></center>
+
+          <div class="clearfix">
+            <button type="submit" class="signupbtn btn_signup">Sign Up</button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div id="login_page" class="modal" style="z-index: 999;">
+      <span onclick="document.getElementById('login_page').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <form class="modal-content" method="POST" action="{{ url_for('login')}}">
+        <div class="container">
+          <center><h1>Login</h1></center>
+          <hr>   
+          <input type="text" placeholder="Enter Email" name="email">
+          <input type="password" placeholder="Enter Password" name="psw">
+          <div class="clearfix">
+            <button type="submit" class="signupbtn btn_signup">Login</button>
+          </div>
+        </div>
+      </form>
+    </div>
+   </section> <!-- /intro -->  
+
+   <!-- features Section
+   ================================================== -->
+	<section id="features">
+		<div class="row section-intro">
+   		<div class="col-twelve with-bottom-line">
+   			<h5>Features</h5>
+   			<h1>Great features you'll love.</h1>
+   			<p class="lead">Are you ready?</p>
+   		</div>   		
+   	</div>
+
+   	<div class="row features-content">
+   		<div class="features-list block-1-3 block-s-1-2 block-tab-full group">
+	      	<div class="bgrid feature">	
+	      		<span class="icon"><i class="fas fa-user"></i></span>            
+	            <div class="service-content">	
+	            	 <h3 class="h05">Create your account</h3>
+		            <p>Create a free account on BookShare with e-mail.</p>
+	         	</div> 	         	 
+				</div> <!-- /bgrid -->
+
+				<div class="bgrid feature">	
+					<span class="icon"><i class="fas fa-search"></i></span>                          
+	            <div class="service-content">	
+	            	<h3 class="h05">Search your books</h3>  
+		            <p>Stay up to date on the latest releases of new books. Search and save everything you're interested in.</p>
+	           </div>	                          
+        </div> <!-- /bgrid -->
+
+        <div class="bgrid feature">
+			   	<span class="icon"><i class="fas fa-share-alt"></i></span>		            
+	            <div class="service-content">
+	            	<h3 class="h05">Share your searches</h3>
+		            <p>Share, with your friends, your research in order to receive advice on the desired product.</p> 
+              </div> 	            	               
+        </div> <!-- /bgrid -->
+      </div> <!-- features-list -->
+   	</div> <!-- features-content -->
+	</section> <!-- /features -->
+
+   <!-- Testimonials Section
+   ================================================== -->
+  <section id="testimonials">
+   	<div class="row section-intro">
+   		<div class="col-twelve ">
+        <h5>Testimonials</h5>
+   			<h2 class="h01">Hear what are readers say.</h2>
+   		</div>   		
+   	</div>   	
+
+    <div class="row flex-container">
+      <div id="testimonial-slider" class="flexslider">
+        <ul class="slides">
+          <li>
+            <div class="testimonial-author">
+              <img src="../static/images/avatars/avatar-1.jpg" alt="Author image">
+                <div class="author-info">
+                  John Buber <span class="position">28, Amburgo (Germany).</span>
+                </div>
+            </div>
+            <p>Today I was browsing on BookShare for the first time and immediately found three in-print books on the subject I am researching. That's three books I am about to buy.</p>                  
+          </li> <!-- /slide -->
+          <li> 
+           	<div class="testimonial-author">
+             	<img src="../static/images/avatars/avatar-2.jpg" alt="Author image">
+               	<div class="author-info">
+               		Sara Biagioli <span>24, Napoli (Italy).</span>
+                </div>
+            </div> 
+            <p>I would never have found my book without BookShare. You can see if it is the right edition, and if you'd be interested. The first thing I did was to Amazon to order a copy.</p>
+          </li> <!-- /slide -->
+          <li> 
+            <div class="testimonial-author">
+              <img src="../static/images/avatars/avatar-3.jpg" alt="Author image">
+                <div class="author-info">
+                  Vitória Siesto <span>29, San Paolo (Brazil).</span>
+                </div>
+            </div> 
+            <p>I live in Brazil and I am doing a Master degree in Translation Studies. Many books that are good for my research are not easy to find over here and I found them in BookShare. It's great!!</p>
+          </li> <!-- /slide -->
+          <li> 
+            <div class="testimonial-author">
+              <img src="../static/images/avatars/avatar-4.jpg" alt="Author image">
+                <div class="author-info">
+                  Adam Koh <span>31, Sydney (Australia).</span>
+                </div>
+            </div> 
+            <p>I went to search for some very old books written in about 1968-9, which were part of my HR training, and found them online at BookShare. I could not find them for last 8 months. Now I am definitely going to buy them.</p>
+          </li> <!-- /slide -->
+        </ul> <!-- /slides -->
+      </div> <!-- /testimonial-slider -->         
+    </div> <!-- /flex-container -->
+  </section> <!-- /testimonials -->
+
+   <!-- footer
+   ================================================== -->
+   <footer>
+      <div class="footer-bottom">
+      	<div class="row">
+      		<div class="col-twelve">
+	      		<div class="copyright">
+		         	<span>© Copyright BookShare.</span> 
+		         	<span>Design by <a href="#">Esposito-Palumbo</a></span>		         	
+		         </div>
+
+		         <div id="go-top" style="display: none;">
+		            <a class="smoothscroll" title="Back to Top" href="#top"><i class="icon ion-android-arrow-up"></i></a>
+		         </div>         
+	      	</div>
+        </div> <!-- /footer-bottom -->     	
+      </div>
+    </footer>  
+
+   <!-- Java Script
+   ================================================== --> 
+<script type="text/javascript">
+  var modal = document.getElementById('sign_up');
+  
+  window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+  }
+</script>
+   <script src="../static/js/jquery-1.11.3.min.js"></script>
+   <script src="../static/js/jquery-migrate-1.2.1.min.js"></script>
+   <script src="../static/js/plugins.js"></script>
+   <script src="../static/js/main.js"></script>
+</body>
+
+</html>

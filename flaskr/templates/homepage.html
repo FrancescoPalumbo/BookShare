@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+
+  <!--- basic page needs
+  ================================================== -->
+  <meta charset="utf-8">
+  <title>BookShare</title>
+  <meta name="description" content="BookShare">  
+  <meta name="author" content="Esposito-Palumbo">
+
+  <!-- mobile specific metas 
+  ================================================== -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- CSS
+  ================================================== -->
+  <link rel="stylesheet" href="../static/css/base.css">  
+  <link rel="stylesheet" href="../static/css/homepage_main.css">
+  <link rel="stylesheet" href="../static/css/vendor.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+
+  <!-- script
+  ================================================== -->
+  <script src="../static/js/modernizr.js"></script>
+  <script src="../static/js/package/dist/sweetalert2.all.min.js"></script>
+
+  <!-- Optional: include a polyfill for ES6 Promises for IE11 and Android browser -->
+  <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
+  <script src="../static/js/package/dist/sweetalert2.min.js"></script>
+  <link rel="stylesheet" href="../static/js/package/dist/sweetalert2.min.css">
+
+  <!-- favicons
+  ================================================== -->
+  <link rel="icon" type="image/png" href="../static/images/icon.png">
+
+</head>
+
+<body id="top">
+
+	<!-- header 
+  ================================================== -->
+  <header>
+    <div class="row">
+   	  <div class="logo">
+	      <a href="{{ url_for('homepage')}}"><img src="../static/images/Logo.png" title="BookShare" /></a>
+      </div>
+
+	   	<nav id="main-nav-wrap">
+				<ul class="main-navigation">
+					<li><a class="smoothscroll"  href="#top" title="Search">Search</a></li>
+					<li><a href="{{ url_for('profile')}}" title="Profile">Profile</a></li>
+          <li class="highlight with-sep"><a href="{{ url_for('logout')}}" title="Logout" style="width:auto;">Logout</a></li>
+        </ul>
+			</nav>
+      <a class="menu-toggle" href="#"><span>Menu</span></a>
+   	</div>   	
+  </header> <!-- /header -->
+
+	<!-- intro section
+  ================================================== -->
+  <section id="intro">
+   	<div class="intro-content">
+   		<div class="row">
+   			<div class="col-twelve">
+	   			<h1>Search your books.</h1>
+	   			<h5>Click on the icon to search for a book.</h5>
+          <div class="container-search">
+            <div class="search-box">
+              <input type="text" id="search" placeholder="Can I help you?">
+              <span></span>
+            </div>
+          </div>
+        </div>  
+        <div id="result" class="books"></div>
+   		</div>   		 		
+   	</div> 
+  </section> <!-- /intro -->  
+
+  <!-- show_books Section
+  ================================================== -->
+	<section id="show_books">
+    <div class="row section-intro">
+   		<div class="col-twelve with-bottom-line">
+   			<h1 id="kind_book">{{k_book}}</h1>
+   			<p class="lead">Your kinds of books.</p>
+   		</div>   		
+   	</div>
+    <div id="bookshelf_1" class="books"></div>
+	</section> <!-- /show_books -->
+
+  <!-- show_books2 Section
+  ================================================== -->
+  <section id="show_books2">
+   	<div class="row section-intro">
+   		<div class="col-twelve  with-bottom-line">
+        <h1>Stephen Hawking.</h1>
+        <p class="lead">Computer technology.</p>
+   		</div>   		
+   	</div>   	
+    <div id="bookshelf_2" class="books"></div>
+  </section> 
+
+  <!-- show_books Section
+  ================================================== -->
+  <section id="show_books">
+    <div class="row section-intro">
+      <div class="col-twelve with-bottom-line">
+        <h1>Best books.</h1>
+        <p class="lead">Computer technology.</p>
+      </div>      
+    </div>
+    <div id="bookshelf_3" class="books"></div> 
+  </section> <!-- /show_books -->
+
+  <!-- footer
+  ================================================== -->
+  <footer>
+    <div class="footer-bottom">
+      <div class="row">
+        <div class="col-twelve">
+          <div class="copyright">
+		       	<span>© Copyright BookShare.</span> 
+		       	<span>Design by <a href="#">Esposito-Palumbo</a></span>		         	
+		      </div>
+           <div id="go-top" style="display: none;">
+                <a class="smoothscroll" title="Back to Top" href="#top"><i class="icon ion-android-arrow-up"></i></a>
+             </div>         
+	      </div>
+      </div> <!-- /footer-bottom -->     	
+    </div>
+  </footer>  
+
+  <!-- Java Script
+  ================================================== --> 
+  <script type="text/javascript">
+    function add(){
+      swal({
+            position: 'center',
+            type: 'success',
+            title: 'The book has been added!',
+            showConfirmButton: false,
+            timer: 1500
+      })
+    }
+  </script>
+  <script src="../static/js/jquery-1.11.3.min.js"></script>
+  <script src="../static/js/jquery-migrate-1.2.1.min.js"></script>
+  <script src="../static/js/plugins.js"></script>
+  <script src="../static/js/main.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="../static/js/search_books.js"></script>
+  <script src="../static/js/show_books.js"></script>
+
+</body>
+</html>
